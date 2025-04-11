@@ -1,28 +1,28 @@
 package com.designpatterns.creational.singleton;
 
-public class Singleton {
-
-    private static Singleton instance;
-
-    private Singleton() {}
-
-    public static Singleton getInstance() {
-
-        if(instance == null) {
-            synchronized (Singleton.class) {
-                if (instance == null) {
-
-                    instance = new Singleton();
-                }
+public class Singleton
+{
+	private static Singleton instance;
+	private Singleton()
+	{
+		
+	}
+	public static Singleton getInstance()
+	{
+		if(instance==null)
+		{
+			synchronized (Singleton.class) {
+            if (instance == null) {
+                   instance = new Singleton();
+                   }
             }
-        }
-        return instance;
-    }
-
+		}
+		return instance;
+	}
 }
 
 /*
-The double-checked locking pattern is necessary in a singleton pattern to ensure that the singleton instance is created only once, even in a multithreaded environment, while also avoiding the overhead of synchronization for every call to getInstance().
+The double-checked locking pattern is necessary in a singleton pattern to ensure that the singleton instance is created only once, even in a multi threaded environment, while also avoiding the overhead of synchronization for every call to getInstance().
 
 Here's how it works and why it's needed:
 
