@@ -11,6 +11,10 @@ public class Main {
 			String vehicleType=br.readLine();
 			VehicleFactory factory=new VehicleFactory();
 			Vehicle vehicle1=factory.getVehicle(vehicleType);
+			if(vehicle1==null){
+				System.out.println("Invalid vehicle Type");
+				continue;
+			}
 			vehicle1.getCCofEngine();
 			vehicle1.getFuelCapacity();
 			vehicle1.getModel();

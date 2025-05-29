@@ -15,8 +15,10 @@ public class VehicleFactory {
 		{
 			return new Truck();
 		}
-		
-		return new Van();
+		else if(vehicleType.equals("Van")) {
+			return new Van();
+		}
+		else return null;
 	}
 
 }
