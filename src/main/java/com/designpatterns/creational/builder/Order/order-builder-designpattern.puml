@@ -1,0 +1,36 @@
+@startuml
+
+title Builder Design Pattern - Order Example
+
+class Order {
+    -item: String
+    -quantity: int
+    -price: double
+    +getItem(): String
+    +getQuantity(): int
+    +getPrice(): double
+    +toString(): String
+    +Order(builder: OrderBuilder)
+}
+
+class OrderBuilder {
+    -item: String
+    -quantity: int
+    -price: double
+    +setItem(item: String): OrderBuilder
+    +setQuantity(qty: int): OrderBuilder
+    +setPrice(price: double): OrderBuilder
+    +build(): Order
+}
+
+OrderBuilder --> Order : builds
+Order .. OrderBuilder : static inner class
+
+class Main {
+    +main(args): void
+}
+
+Main --> OrderBuilder : uses
+Main --> Order : creates
+
+@enduml
