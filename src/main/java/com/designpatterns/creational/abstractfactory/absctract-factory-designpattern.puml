@@ -1,0 +1,41 @@
+@startuml
+
+title Abstract Factory Design Pattern
+
+interface Vehicle {
+    +getModel(): void
+    +getFuelCapacity():void
+}
+
+class BMW implements Vehicle
+class MG implements Vehicle
+class TechMahindra implements Vehicle
+
+BMW -|> Vehicle
+MG -|> Vehicle
+TechMahindra -|> Vehicle
+
+interface VehicleFactory {
+    +createVehicle(): Vehicle
+}
+
+class BMWFactory implements VehicleFactory
+class MGFactory implements VehicleFactory
+class TMFactory implements VehicleFactory
+
+BMWFactory -|> VehicleFactory
+MGFactory -|> VehicleFactory
+TMFactory -|> VehicleFactory
+
+BMWFactory --> BMW : creates
+MGFactory --> MG : creates
+TMFactory --> TechMahindra : creates
+
+class Main {
+    +main(args): void
+}
+
+Main --> VehicleFactory : uses
+Main --> Vehicle : uses
+
+@enduml
