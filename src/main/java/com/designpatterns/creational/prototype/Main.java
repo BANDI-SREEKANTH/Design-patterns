@@ -17,8 +17,19 @@ public class Main {
 
 		// Shallow copy demonstration -- end - Both objects must have different hash codes
 
-		// Deepcopy example is student has address (Student has one to one association with address object)
-
+		// Deep copy example is student has address (Student has one to one association with address object)
+		Address address1=new Address("Kesvanagar","DMM");
+		Student student1=new Student("sreekanth",24,"CSE",address1);
+		Student student2=student1.clone();
+		System.out.println("Hashcode of student1 : "+student1.hashCode());
+		System.out.println("Hashcode of student1 : "+student2.hashCode());
+		System.out.println(student1);
+		System.out.println(student2);
+		student2.address=new Address("Address changed","Changed City");
+		System.out.println("Hashcode of student1 : "+student1.hashCode());
+		System.out.println("Hashcode of student1 : "+student2.hashCode());
+		System.out.println(student1);
+		System.out.println(student2);
 
 		// Deepcopy end
 
