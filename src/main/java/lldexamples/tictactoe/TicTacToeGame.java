@@ -9,6 +9,19 @@ public class TicTacToeGame implements BoardGames {
     private Player playerO;
     private Player currentPlayer;
     private GameContext gameContext;
+
+    /*
+    For extensibilty i have more than 2 players then i will maintain all players in the list
+    private List<Player> players;
+    public TicTacToe(List<PlayerStrategy> strtagies)
+    {
+        board=new Board();
+        players=new ArrayList<>();
+        Players.add(new Player(Symbol.X, strtagies.get(0)));
+        Players.add(new Player(Symbol.X, strtagies.get(1)));
+        currentPlayer=0; starts from first player from players list
+    }
+     */
     // Initializes the game board and players with their respective strategies.
     // Sets the current player to playerX. can be set to playerO as well
     public TicTacToeGame(PlayerStrategy xStrategy, PlayerStrategy oStrategy,

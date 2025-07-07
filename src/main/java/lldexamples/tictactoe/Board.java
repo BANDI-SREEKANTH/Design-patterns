@@ -4,6 +4,20 @@ public class Board {
     private final int rows;
     private final int columns;
     private Symbol[][] grid;
+
+    /* Extensibility that we support the different sizes of board
+    public Board(int size)
+    {
+        grid=new Symbol[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                grid[i][j] = Symbol.EMPTY;
+            }
+        }
+    }
+
+
+     */
     public Board(int rows, int columns) {
         // initially the board of each grid cell having EMPTY
         this.rows = rows;
