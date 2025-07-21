@@ -1,11 +1,44 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+' Interface or base class
+interface Vehicle {
+    +getModel(): String
+    +getFuelCapacity(): double
+    +getCCOfEngine(): int
+}
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+' Concrete vehicle classes
+class Car implements Vehicle
+class Truck implements Vehicle
+class Van implements Vehicle
+class BUS implements Vehicle
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+' Factory class
+class VehicleFactory {
+    +getVehicle(type: VehicleType): Vehicle
+}
+
+' Enum for vehicle types
+enum VehicleType {
+    CAR
+    TRUCK
+    VAN
+    BUS
+}
+
+' Main class (Client)
+class Main {
+    +main(args: String[]): void
+}
+
+' Relationships
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Van
+Vehicle <|-- BUS
+
+Main --> VehicleFactory : uses
+VehicleFactory --> Vehicle : returns
+VehicleFactory --> VehicleType
+
 @enduml

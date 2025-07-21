@@ -1,0 +1,7 @@
+com\designpatterns\creational\singleton\Synchronizedd.class
+com\designpatterns\creational\singleton\BillPughSolution$SingletonHelper.class
+com\designpatterns\creational\singleton\DoubleCheckedLocking.class
+com\designpatterns\creational\singleton\LazyInitaliztion.class
+com\designpatterns\creational\singleton\Main.class
+com\designpatterns\creational\singleton\EagerInitalization.class
+com\designpatterns\creational\singleton\BillPughSolution.class

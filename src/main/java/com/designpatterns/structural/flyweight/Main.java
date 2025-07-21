@@ -1,4 +1,4 @@
-package com.designpatterns.behavioural.momento;
+package com.designpatterns.structural.flyweight;
 
 public class Main {
 
